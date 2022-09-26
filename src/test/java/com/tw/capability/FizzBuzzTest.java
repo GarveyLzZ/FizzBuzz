@@ -11,10 +11,10 @@ class FizzBuzzTest {
     @Test
     void should_return_Whizz_when_number_contains_seven() {
         //given
-        Integer inputNumber1 = 7;
-        Integer inputNumber2 = 17;
-        Integer inputNumber3 = 75;
-        Integer inputNumber4 = 11;
+        String inputNumber1 = "7";
+        String inputNumber2 = "17";
+        String inputNumber3 = "75";
+        String inputNumber4 = "11";
 
         //when
         String expected1 = fizzBuzz.checkContain7(inputNumber1);
@@ -31,11 +31,11 @@ class FizzBuzzTest {
     @Test
     void should_return_Buzz_when_number_contains_five() {
         //given
-        Integer inputNumber1 = 5;
-        Integer inputNumber2 = 35;
-        Integer inputNumber3 = 75;
-        Integer inputNumber4 = 15;
-        Integer inputNumber5 = 14;
+        String inputNumber1 = "5";
+        String inputNumber2 = "35";
+        String inputNumber3 = "75";
+        String inputNumber4 = "15";
+        String inputNumber5 = "14";
 
         //when
         String expected1 = fizzBuzz.checkContain5(inputNumber1);
@@ -55,11 +55,11 @@ class FizzBuzzTest {
     @Test
     void should_return_Fizz_when_number_contains_three() {
         //given
-        Integer inputNumber1 = 3;
-        Integer inputNumber2 = 13;
-        Integer inputNumber3 = 14;
-        Integer inputNumber4 = 35;
-        Integer inputNumber5 = 75;
+        String inputNumber1 = "3";
+        String inputNumber2 = "13";
+        String inputNumber3 = "14";
+        String inputNumber4 = "35";
+        String inputNumber5 = "75";
         //when
         String expected1 = fizzBuzz.checkContain3(inputNumber1);
         String expected2 = fizzBuzz.checkContain3(inputNumber2);
@@ -77,9 +77,9 @@ class FizzBuzzTest {
     @Test
     void should_return_Fizz_Whizz_when_div_three_seven() {
         //given
-        Integer inputNumber1 = 21;
-        Integer inputNumber2 = 63;
-        Integer inputNumber3 = 147;
+        String inputNumber1 = "21";
+        String inputNumber2 = "63";
+        String inputNumber3 = "147";
         //when
         String expected1 = fizzBuzz.checkThreeAndSeven(inputNumber1);
         String expected2 = fizzBuzz.checkThreeAndSeven(inputNumber2);
@@ -91,11 +91,27 @@ class FizzBuzzTest {
     }
 
     @Test
+    void should_return_Fizz() {
+        //given
+        String inputNumber1 = "6";
+        String inputNumber2 = "9";
+        String inputNumber3 = "15";
+        //when
+        String expected1 = fizzBuzz.checkDivision(inputNumber1);
+        String expected2 = fizzBuzz.checkDivision(inputNumber2);
+        String expected3 = fizzBuzz.checkDivision(inputNumber3);
+        //then
+        assertEquals("Fizz", expected1);
+        assertEquals("Fizz", expected2);
+        assertEquals("Buzz", expected3);
+    }
+
+    @Test
     void should_return_number_when_given_a_valid_number() {
         //given
-        Integer inputNumber1 = 1;
-        Integer inputNumber2 = 16;
-        Integer inputNumber3 = 28;
+        String inputNumber1 = "1";
+        String inputNumber2 = "16";
+        String inputNumber3 = "28";
 
         //when
         String expected1 = fizzBuzz.commonNumber(inputNumber1);
