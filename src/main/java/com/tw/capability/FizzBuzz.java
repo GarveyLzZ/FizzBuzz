@@ -53,4 +53,8 @@ public class FizzBuzz {
         }
         return null;
     }
+
+    public String commonNumber(Integer inputNumber) {
+        return inputNumber.toString();
+    }
 }

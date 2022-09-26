@@ -71,7 +71,7 @@ class FizzBuzzTest {
         assertEquals("Fizz", expected2);
         assertNull(expected3);
         assertEquals("BuzzWhizz", expected4);
-        assertEquals("FizzWhizz",expected5);
+        assertEquals("FizzWhizz", expected5);
     }
 
     @Test
@@ -87,6 +87,23 @@ class FizzBuzzTest {
         //then
         assertEquals("FizzWhizz", expected1);
         assertEquals("Fizz", expected2);
-        assertEquals("FizzWhizz",expected3);
+        assertEquals("FizzWhizz", expected3);
+    }
+
+    @Test
+    void should_return_number_when_given_a_valid_number() {
+        //given
+        Integer inputNumber1 = 1;
+        Integer inputNumber2 = 16;
+        Integer inputNumber3 = 28;
+
+        //when
+        String expected1 = fizzBuzz.commonNumber(inputNumber1);
+        String expected2 = fizzBuzz.commonNumber(inputNumber2);
+        String expected3 = fizzBuzz.commonNumber(inputNumber3);
+        //then
+        assertEquals("1", expected1);
+        assertEquals("16", expected2);
+        assertEquals("28", expected3);
     }
 }
