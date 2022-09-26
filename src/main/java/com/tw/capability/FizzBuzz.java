@@ -8,6 +8,10 @@ public class FizzBuzz {
         } else if (inputNumber.toString().contains("7")) {
             return "Whizz";
         }
-        return inputNumber.toString();
+        return null;
+    }
+
+    public String checkContain5(Integer inputNumber) {
+        return null;
     }
 }
