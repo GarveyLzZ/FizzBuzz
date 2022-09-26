@@ -24,4 +24,17 @@ public class FizzBuzz {
         }
         return null;
     }
+
+    public String checkContain3(Integer inputNumber) {
+        if (inputNumber.toString().contains("7")){
+            return this.checkContain7(inputNumber);
+        }
+        if (inputNumber.toString().contains("5")){
+            return this.checkContain5(inputNumber);
+        }
+        if (inputNumber.toString().contains("3")) {
+            return "Fizz";
+        }
+        return null;
+    }
 }

@@ -51,4 +51,26 @@ class FizzBuzzTest {
         assertNull(expected5);
 
     }
+
+    @Test
+    void should_return_Fizz_when_number_contains_three() {
+        //given
+        Integer inputNumber1 = 3;
+        Integer inputNumber2 = 13;
+        Integer inputNumber3 = 14;
+        Integer inputNumber4 = 35;
+        Integer inputNumber5 = 75;
+        //when
+        String expected1 = fizzBuzz.checkContain3(inputNumber1);
+        String expected2 = fizzBuzz.checkContain3(inputNumber2);
+        String expected3 = fizzBuzz.checkContain3(inputNumber3);
+        String expected4 = fizzBuzz.checkContain3(inputNumber4);
+        String expected5 = fizzBuzz.checkContain3(inputNumber5);
+        //then
+        assertEquals("Fizz", expected1);
+        assertEquals("Fizz", expected2);
+        assertNull(expected3);
+        assertEquals("BuzzWhizz", expected4);
+        assertEquals("FizzWhizz",expected5);
+    }
 }
