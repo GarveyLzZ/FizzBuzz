@@ -34,14 +34,21 @@ class FizzBuzzTest {
         Integer inputNumber1 = 5;
         Integer inputNumber2 = 35;
         Integer inputNumber3 = 75;
+        Integer inputNumber4 = 15;
+        Integer inputNumber5 = 14;
 
         //when
         String expected1 = fizzBuzz.checkContain5(inputNumber1);
         String expected2 = fizzBuzz.checkContain5(inputNumber2);
         String expected3 = fizzBuzz.checkContain5(inputNumber3);
+        String expected4 = fizzBuzz.checkContain5(inputNumber4);
+        String expected5 = fizzBuzz.checkContain5(inputNumber5);
         //then
         assertEquals("Buzz", expected1);
         assertEquals("BuzzWhizz", expected2);
-        assertNull(expected3);
+        assertEquals("FizzWhizz", expected3);
+        assertEquals("Buzz", expected4);
+        assertNull(expected5);
+
     }
 }

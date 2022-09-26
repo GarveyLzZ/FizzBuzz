@@ -5,13 +5,23 @@ public class FizzBuzz {
     public String checkContain7(Integer inputNumber) {
         if (inputNumber.toString().contains("7") && inputNumber % 3 == 0) {
             return "FizzWhizz";
-        } else if (inputNumber.toString().contains("7")) {
+        }
+        if (inputNumber.toString().contains("7")) {
             return "Whizz";
         }
         return null;
     }
 
     public String checkContain5(Integer inputNumber) {
+        if (inputNumber.toString().contains("7")){
+            return this.checkContain7(inputNumber);
+        }
+        if (inputNumber.toString().contains("5") && inputNumber % 7 == 0) {
+            return "BuzzWhizz";
+        }
+        if (inputNumber.toString().contains("5")) {
+            return "Buzz";
+        }
         return null;
     }
 }
