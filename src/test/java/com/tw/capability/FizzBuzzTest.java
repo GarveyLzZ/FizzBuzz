@@ -73,4 +73,20 @@ class FizzBuzzTest {
         assertEquals("BuzzWhizz", expected4);
         assertEquals("FizzWhizz",expected5);
     }
+
+    @Test
+    void should_return_Fizz_Whizz_when_div_three_seven() {
+        //given
+        Integer inputNumber1 = 21;
+        Integer inputNumber2 = 63;
+        Integer inputNumber3 = 147;
+        //when
+        String expected1 = fizzBuzz.checkThreeAndSeven(inputNumber1);
+        String expected2 = fizzBuzz.checkThreeAndSeven(inputNumber2);
+        String expected3 = fizzBuzz.checkThreeAndSeven(inputNumber3);
+        //then
+        assertEquals("FizzWhizz", expected1);
+        assertEquals("Fizz", expected2);
+        assertEquals("FizzWhizz",expected3);
+    }
 }

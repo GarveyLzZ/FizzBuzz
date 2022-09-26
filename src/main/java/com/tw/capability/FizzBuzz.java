@@ -37,4 +37,20 @@ public class FizzBuzz {
         }
         return null;
     }
+
+    public String checkThreeAndSeven(Integer inputNumber) {
+        if (inputNumber.toString().contains("7")){
+            return this.checkContain7(inputNumber);
+        }
+        if (inputNumber.toString().contains("5")){
+            return this.checkContain5(inputNumber);
+        }
+        if (inputNumber.toString().contains("3")) {
+            return this.checkContain3(inputNumber);
+        }
+        if (inputNumber % 3 == 0 && inputNumber % 7 ==0){
+            return "FizzWhizz";
+        }
+        return null;
+    }
 }
