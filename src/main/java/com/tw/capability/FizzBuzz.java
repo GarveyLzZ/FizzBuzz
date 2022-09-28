@@ -1,36 +1,49 @@
 package com.tw.capability;
 
+import java.util.Optional;
+
 public class FizzBuzz {
 
-    public String checkContain7(String inputNumber) {
-        String contained = Utils.getContained(Utils.isContains(inputNumber, "7") &&
-                Utils.isDivided(inputNumber,3), "Fizz");
-        if (contained != null) return contained;
+    static Context context;
 
-        contained = Utils.getContained(Utils.isContains(inputNumber, "7"), "Whizz");
-        if (contained != null) return contained;
-        return this.checkContain5(inputNumber);
+    private static String getContainedAndDivision(String inputNumber, int containedNumber, int dividedNumber, String answer) {
+        context = new Context(new CheckContained());
+        if (context.containedAndDivided(inputNumber, containedNumber, dividedNumber, answer)) {
+            return answer;
+        }
+        return null;
+
+    }
+
+    private static String getContained(String inputNumber, int containedNumber, String answer) {
+        if (context.contained(inputNumber, containedNumber, answer)) {
+            return answer;
+        }
+        return null;
+    }
+
+    public String checkContain7(String inputNumber) {
+        return Optional.ofNullable(getContainedAndDivision(inputNumber, 7, 3, "Fizz")).
+                orElse((getContained(inputNumber, 7, "Whizz")));
     }
 
     public String checkContain5(String inputNumber) {
-        String contained = Utils.getContained(Utils.isContains(inputNumber, "5") &&
-                Utils.isDivided(inputNumber,7), "BuzzWhizz");
-        if (contained != null) return contained;
+        Optional<String> containSeven = Optional.ofNullable(checkContain7(inputNumber));
 
-        contained = Utils.getContained(Utils.isContains(inputNumber, "5"), "Buzz");
-        if (contained != null) return contained;
-
-        return this.checkContain3(inputNumber);
+        return containSeven.orElse(Optional.ofNullable(getContainedAndDivision(inputNumber, 5, 7, "BuzzWhizz")).
+                orElse((getContained(inputNumber, 5, "Buzz"))));
     }
 
     public String checkContain3(String inputNumber) {
-        String Fizz = Utils.getContained(Utils.isContains(inputNumber, "3"), "Fizz");
-        if (Fizz != null) return Fizz;
 
-        return this.checkDivision(inputNumber);
+        Optional<String> containFive = Optional.ofNullable(checkContain5(inputNumber));
+
+        return containFive.orElse(getContained(inputNumber, 3, "Fizz"));
     }
 
     public String checkDivision(String inputNumber) {
+        Optional<String> containThree = Optional.ofNullable(checkContain5(inputNumber));
+
         int integer = Integer.parseInt(inputNumber);
         StringBuilder ans = new StringBuilder();
         if (integer % 3 == 0) {
@@ -44,6 +57,6 @@ public class FizzBuzz {
         }
         if (ans.length() == 0)
             return inputNumber;
-        return ans.toString();
+        return containThree.orElse(ans.toString());
     }
 }
