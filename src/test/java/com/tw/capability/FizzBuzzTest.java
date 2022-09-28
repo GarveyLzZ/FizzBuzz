@@ -23,7 +23,7 @@ class FizzBuzzTest {
 
     @ParameterizedTest
     @MethodSource("com.tw.capability.TestData#ContainFiveArguments")
-    void should_return_Buzz_when_number_contains_five_not_contain_seven(String inputNumber, String actual) {
+    void should_return_Buzz_when_number_contains_five(String inputNumber, String actual) {
         // give
 
         // when
@@ -34,7 +34,7 @@ class FizzBuzzTest {
 
     @ParameterizedTest
     @ValueSource(strings = {"3", "63", "30"})
-    void should_return_Fizz_when_number_contains_three_not_contain_five_and_seven(String inputNumber) {
+    void should_return_Fizz_when_number_contains_three(String inputNumber) {
         //given
         String actual = "Fizz";
         //when
@@ -46,7 +46,7 @@ class FizzBuzzTest {
 
     @ParameterizedTest
     @MethodSource("com.tw.capability.TestData#DivisionArguments")
-    void should_return_FizzBuzzWhizz_and_not_contain_three_five_and_seven(String inputNumber, String actual) {
+    void should_return_FizzBuzzWhizz(String inputNumber, String actual) {
         // give
 
         // when
