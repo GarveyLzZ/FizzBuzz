@@ -9,18 +9,13 @@ public class FizzBuzz {
     private static String getContainedAndDivision(String inputNumber, int containedNumber, int dividedNumber,
                                                   String answer) {
         context = new Context(new CheckContained());
-        if (context.containedAndDivided(inputNumber, containedNumber, dividedNumber, answer)) {
-            return answer;
-        }
-        return null;
-
+        return context.containedAndDivided(inputNumber, containedNumber,
+                dividedNumber, answer) ? answer : null;
     }
 
     private static String getContained(String inputNumber, int containedNumber, String answer) {
-        if (context.contained(inputNumber, containedNumber, answer)) {
-            return answer;
-        }
-        return null;
+        context = new Context(new CheckContained());
+        return context.contained(inputNumber, containedNumber, answer) ? answer : null;
     }
 
     public String checkContain7(String inputNumber) {
