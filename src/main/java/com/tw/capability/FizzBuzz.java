@@ -6,7 +6,8 @@ public class FizzBuzz {
 
     static Context context;
 
-    private static String getContainedAndDivision(String inputNumber, int containedNumber, int dividedNumber, String answer) {
+    private static String getContainedAndDivision(String inputNumber, int containedNumber, int dividedNumber,
+                                                  String answer) {
         context = new Context(new CheckContained());
         if (context.containedAndDivided(inputNumber, containedNumber, dividedNumber, answer)) {
             return answer;
