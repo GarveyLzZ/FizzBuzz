@@ -55,8 +55,9 @@ public class FizzBuzz {
         if (integer % 7 == 0) {
             ans.append("Whizz");
         }
-        if (ans.length() == 0)
+        if (ans.length() == 0) {
             return inputNumber;
+        }
         return containThree.orElse(ans.toString());
     }
 }
