@@ -10,7 +10,10 @@ class TestData {
                 Arguments.of("7", "Whizz"),
                 Arguments.of("17", "Whizz"),
                 Arguments.of("75", "Fizz"),
-                Arguments.of("157", "Whizz")
+                Arguments.of("157", "Whizz"),
+                Arguments.of("169", null),
+                Arguments.of("170", "Whizz")
+
         );
     }
     static Stream<Arguments> ContainFiveArguments() {
@@ -18,7 +21,9 @@ class TestData {
                 Arguments.of("5", "Buzz"),
                 Arguments.of("35", "BuzzWhizz"),
                 Arguments.of("15", "Buzz"),
-                Arguments.of("154", "BuzzWhizz")
+                Arguments.of("154", "BuzzWhizz"),
+                Arguments.of("169", null),
+                Arguments.of("75", "Fizz")
         );
     }
     static Stream<Arguments> DivisionArguments() {
