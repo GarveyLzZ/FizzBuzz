@@ -5,10 +5,6 @@ import com.tw.capability.Strategy;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-/**
- * @author: jiawei.liu
- * @date: 2022/10/10 09:58
- */
 public class Contained3 implements Strategy {
     @Override
     public boolean contained(String number) {
@@ -17,9 +13,9 @@ public class Contained3 implements Strategy {
 
     @Override
     public String division(String number) {
-        return !Stream.of(new contained5())
+        return this.contained(number) ? "Fizz" : Stream.of(new Division3())
                 .filter(contained5 -> contained5.contained(number))
                 .map(strategy -> strategy.division(number))
-                .collect(Collectors.joining()).isEmpty() ? "" : "Fizz";
+                .collect(Collectors.joining());
     }
 }

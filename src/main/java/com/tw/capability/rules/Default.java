@@ -2,18 +2,11 @@ package com.tw.capability.rules;
 
 import com.tw.capability.Strategy;
 
-import java.util.stream.Stream;
-
-/**
- * @author: jiawei.liu
- * @date: 2022/10/10 17:23
- */
 public class Default implements Strategy {
 
     @Override
     public boolean contained(String number) {
-        return Stream.of(new Contained3(), new contained5(), new contained7())
-                .noneMatch(strategy -> strategy.contained(number));
+        return true;
     }
 
     @Override

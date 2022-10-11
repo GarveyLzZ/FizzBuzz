@@ -5,19 +5,16 @@ import com.tw.capability.Strategy;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-/**
- * @author: jiawei.liu
- * @date: 2022/10/10 09:58
- */
-public class contained7 implements Strategy {
+public class Contained5 implements Strategy {
     @Override
     public boolean contained(String number) {
-        return number.contains("7");
+        return number.contains("5");
     }
 
     @Override
     public String division(String number) {
-        return Stream.of(new division3(), new division7())
+        return Stream.of(new Division5(), new Division7())
+                .filter(division5 -> division5.contained(number))
                 .map(strategy -> strategy.division(number))
                 .collect(Collectors.joining());
     }

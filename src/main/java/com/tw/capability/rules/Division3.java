@@ -2,11 +2,7 @@ package com.tw.capability.rules;
 
 import com.tw.capability.Strategy;
 
-/**
- * @author: jiawei.liu
- * @date: 2022/10/10 09:58
- */
-public class division3 implements Strategy {
+public class Division3 implements Strategy {
 
     @Override
     public boolean contained(String number) {
@@ -15,6 +11,6 @@ public class division3 implements Strategy {
 
     @Override
     public String division(String divisionNumber) {
-        return Integer.parseInt(divisionNumber) % 3 == 0 ? "Fizz" : "";
+        return this.contained(divisionNumber) ? "Fizz" : "";
     }
 }
