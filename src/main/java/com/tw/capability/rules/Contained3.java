@@ -9,7 +9,7 @@ import java.util.stream.Stream;
  * @author: jiawei.liu
  * @date: 2022/10/10 09:58
  */
-public class contained3 implements Strategy {
+public class Contained3 implements Strategy {
     @Override
     public boolean contained(String number) {
         return number.contains("3");

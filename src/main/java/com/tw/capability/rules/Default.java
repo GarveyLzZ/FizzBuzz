@@ -12,7 +12,7 @@ public class Default implements Strategy {
 
     @Override
     public boolean contained(String number) {
-        return Stream.of(new contained3(), new contained5(), new contained7())
+        return Stream.of(new Contained3(), new contained5(), new contained7())
                 .noneMatch(strategy -> strategy.contained(number));
     }
 

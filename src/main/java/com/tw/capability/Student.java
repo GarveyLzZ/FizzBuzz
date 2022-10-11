@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 public class Student {
     public String getFizzBuzz(String inputNumber) {
         String result = null;
-        Optional<String> firstResult = Stream.of(new contained7(), new contained5(), new contained3(), new Default())
+        Optional<String> firstResult = Stream.of(new contained7(), new contained5(), new Contained3(), new Default())
                 .filter(strategy -> strategy.contained(inputNumber))
                 .map(strategy -> strategy.division(inputNumber))
                 .findFirst();
